@@ -99,6 +99,10 @@ class Key: Hashable {
         }
     }
     
+    var isHidden: Bool {
+        return self.type == .Character
+    }
+    
     var isSpecial: Bool {
         get {
             switch self.type {
@@ -178,6 +182,12 @@ class Key: Hashable {
     }
     
     func keyCapForCase(uppercase: Bool) -> String {
+        
+        // Blank keyboard changes
+        if self.isHidden {
+            return ""
+        }
+        
         if uppercase {
             if self.uppercaseKeyCap != nil {
                 return self.uppercaseKeyCap!

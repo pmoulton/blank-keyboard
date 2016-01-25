@@ -27,7 +27,7 @@ class KeyboardViewController: UIInputViewController {
     
     var keyboard: Keyboard!
     var forwardingView: ForwardingView!
-    var layout: KeyboardLayout?
+    var layout: BlankKeyboardLayout?
     var heightConstraint: NSLayoutConstraint?
     
     var bannerView: ExtraView?
@@ -101,7 +101,7 @@ class KeyboardViewController: UIInputViewController {
             kSmallLowercase: false
         ])
         
-        self.keyboard = defaultKeyboard()
+        self.keyboard = blankKeyboard()
         
         self.shiftState = .Disabled
         self.currentMode = 0
@@ -820,7 +820,7 @@ class KeyboardViewController: UIInputViewController {
     // MOST COMMONLY EXTENDABLE METHODS //
     //////////////////////////////////////
     
-    class var layoutClass: KeyboardLayout.Type { get { return KeyboardLayout.self }}
+    class var layoutClass: BlankKeyboardLayout.Type { get { return BlankKeyboardLayout.self }}
     class var layoutConstants: LayoutConstants.Type { get { return LayoutConstants.self }}
     class var globalColors: GlobalColors.Type { get { return GlobalColors.self }}
     
