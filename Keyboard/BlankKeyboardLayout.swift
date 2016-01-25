@@ -13,7 +13,6 @@ class BlankKeyboardLayout: KeyboardLayout {
     override func frameForPopup(key: KeyboardKey, direction: Direction) -> CGRect {
         return CGRectZero
     }
-    
     override func willShowPopup(key: KeyboardKey, direction: Direction) {
     }
     
